@@ -1,3 +1,4 @@
+alert("JS funcionando");
 async function carregarDadosCartola() {
     try {
         const resposta = await fetch("/api/cartola");
