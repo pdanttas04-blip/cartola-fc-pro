@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cartola FC Pro</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    background: #f4f6f9;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(180deg, #0f3d2e, #07241c);
+    color: white;
+    position: fixed;
+    padding: 25px;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 12px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar ul li:hover {
+    opacity: 0.7;
+}
+
+/* MAIN */
+.main {
+    margin-left: 250px;
+    padding: 30px;
+    width: 100%;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #0f3d2e;
+}
+
+.tabela {
+    margin-top: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: #0f3d2e;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>⚽ Cartola FC Pro</h2>
+    <ul>
+        <li>🏠 Dashboard</li>
+        <li>🎯 Capitães</li>
+        <li>📊 Estatísticas</li>
+        <li>💎 Premium</li>
+        <li>🏆 Ranking</li>
+    </ul>
+</div>
+
+<div class="main">
+    <div class="header">
+        <h1>Dashboard</h1>
+        <p>Rodada atual: 1 | Mercado: Aberto</p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>🔥 Melhor Capitão</h3>
+            <p>Carregando...</p>
+        </div>
+
+        <div class="card">
+            <h3>⚡ Melhor Jogador</h3>
+            <p>Carregando...</p>
+        </div>
+
+        <div class="card">
+            <h3>🧠 Melhor Técnico</h3>
+            <p>Carregando...</p>
+        </div>
+
+        <div class="card">
+            <h3>💰 Maior Valorização</h3>
+            <p>Carregando...</p>
+        </div>
+    </div>
+
+    <div class="tabela">
+        <h3>📊 Brasileirão Atualizado</h3>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Time</th>
+                <th>Pontos</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Carregando...</td>
+                <td>--</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
