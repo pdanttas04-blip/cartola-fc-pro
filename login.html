@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Login - Cartola FC Pro</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<title>Login – Cartola FC Pro</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
 <header class="header">
@@ -13,9 +14,36 @@
 
 <section class="hero">
   <h2>Área de Login</h2>
-  <p>Em breve sistema completo de acesso.</p>
-  <a href="index.html" class="btn-primary">Voltar para Home</a>
+
+  <input type="email" id="email" placeholder="Seu e-mail">
+  <br><br>
+
+  <input type="password" id="senha" placeholder="Sua senha">
+  <br><br>
+
+  <button onclick="registrar(
+    document.getElementById('email').value,
+    document.getElementById('senha').value
+  )" class="btn-primary">
+    Criar Conta
+  </button>
+
+  <br><br>
+
+  <button onclick="login(
+    document.getElementById('email').value,
+    document.getElementById('senha').value
+  )" class="btn-primary">
+    Entrar
+  </button>
+
+  <br><br>
+
+  <a href="index.html">Voltar para Home</a>
+
 </section>
+
+<script type="module" src="js/firebase.js"></script>
 
 </body>
 </html>
