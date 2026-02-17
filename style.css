@@ -36,15 +36,18 @@ body {
   padding: 40px;
 }
 
-.status {
-  margin-bottom: 30px;
-  font-weight: bold;
-}
-
 .card {
   background: white;
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 20px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.pagina {
+  display: none;
+}
+
+.pagina.ativa {
+  display: block;
 }
