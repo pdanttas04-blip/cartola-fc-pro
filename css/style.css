@@ -52,3 +52,20 @@ body {
   font-size: 14px;
   color: #777;
 }
+.player-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.player-card h2 {
+  color: #1e7f3f;
+}
+
+.capitao {
+  border: 2px solid #1e7f3f;
+  background: #f0fff4;
+}
