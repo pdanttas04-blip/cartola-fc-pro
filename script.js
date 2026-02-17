@@ -1,22 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
-    carregarStatus();
+    carregarDados();
 });
 
-// ===============================
-// STATUS DO MERCADO
-// ===============================
-async function carregarStatus() {
+async function carregarDados() {
     try {
         const response = await fetch("/api/cartola");
         const dados = await response.json();
 
-        document.getElementById("rodada").innerText =
-            "Rodada " + dados.rodada_atual;
+        // Pega todos atletas
+        const atletas = Object.values(dados.atletas);
 
-        document.getElementById("mercado").innerText =
-            "Mercado: " + dados.status.nome;
+        // Melhor jogador (maior média)
+        const melhor = atletas.sort((a, b) => b.media_num - a.media_num)[0];
+
+        document.getElementById("melhorJogador").innerText =
+            melhor.apelido + " - Média: " + melhor.media_num;
+
+        document.getElementById("capitao").innerText =
+            melhor.apelido;
+
+        document.getElementById("tecnico").innerText =
+            "Técnico baseado no melhor ataque";
+
+        document.getElementById("valorizacao").innerText =
+            melhor.apelido + " - Valorização: " + melhor.variacao_num;
 
     } catch (error) {
-        console.error("Erro ao carregar status:", error);
+        console.error("Erro ao carregar dados:", error);
     }
 }
