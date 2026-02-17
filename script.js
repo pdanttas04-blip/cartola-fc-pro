@@ -1,42 +1,33 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  async function carregarStatus() {
-    try {
-      const resposta = await fetch("https://api.cartola.globo.com/mercado/status");
-      const dados = await resposta.json();
+    const sections = {
+        dashboard: document.getElementById("dashboard"),
+        capitaes: document.getElementById("capitaes"),
+        estatisticas: document.getElementById("estatisticas"),
+        premium: document.getElementById("premium"),
+        ranking: document.getElementById("ranking")
+    };
 
-      document.querySelector(".status-rodada").innerText =
-        "Rodada atual: " + dados.rodada_atual;
-
-      document.querySelector(".status-mercado").innerText =
-        "Mercado: " + dados.status.nome;
-
-    } catch (erro) {
-      console.log("Erro ao carregar status:", erro);
+    function hideAll() {
+        Object.values(sections).forEach(sec => {
+            if (sec) sec.style.display = "none";
+        });
     }
-  }
 
-  async function carregarAtletas() {
-    try {
-      const resposta = await fetch("https://api.cartola.globo.com/atletas/mercado");
-      const dados = await resposta.json();
-
-      const atletas = Object.values(dados.atletas);
-
-      const melhor = atletas.sort((a, b) => b.media_num - a.media_num)[0];
-      document.querySelector(".melhor-jogador").innerText =
-        melhor.apelido + " (" + melhor.media_num.toFixed(2) + ")";
-
-      const valorizacao = atletas.sort((a, b) => b.variacao_num - a.variacao_num)[0];
-      document.querySelector(".maior-valorizacao").innerText =
-        valorizacao.apelido + " (+" + valorizacao.variacao_num.toFixed(2) + ")";
-
-    } catch (erro) {
-      console.log("Erro ao carregar atletas:", erro);
+    function show(section) {
+        hideAll();
+        if (sections[section]) {
+            sections[section].style.display = "block";
+        }
     }
-  }
 
-  carregarStatus();
-  carregarAtletas();
+    // MENU CLIQUES
+    document.getElementById("btnDashboard").onclick = () => show("dashboard");
+    document.getElementById("btnCapitaes").onclick = () => show("capitaes");
+    document.getElementById("btnEstatisticas").onclick = () => show("estatisticas");
+    document.getElementById("btnPremium").onclick = () => show("premium");
+    document.getElementById("btnRanking").onclick = () => show("ranking");
+
+    show("dashboard");
 
 });
