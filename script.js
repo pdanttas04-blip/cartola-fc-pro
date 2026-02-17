@@ -1,15 +1,15 @@
-async function carregarStatusCartola() {
+async function carregarDadosCartola() {
     try {
         const resposta = await fetch("/api/cartola");
         const dados = await resposta.json();
 
-        // Rodada atual
+        // Rodada
         document.getElementById("rodada").innerText =
             "Rodada " + dados.rodada_atual;
 
         // Mercado
         document.getElementById("mercado").innerText =
-            "Mercado: " + (dados.status?.nome || "Aberto");
+            "Mercado: " + dados.status?.nome;
 
         const atletas = Object.values(dados.atletas);
 
@@ -30,4 +30,4 @@ async function carregarStatusCartola() {
     }
 }
 
-carregarStatusCartola();
+carregarDadosCartola();
