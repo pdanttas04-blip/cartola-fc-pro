@@ -1,43 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Cartola FC Pro</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Cartola FC Pro</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="sidebar">
-    <h2>⚽ Cartola FC Pro</h2>
-    <ul>
-      <li>🏠 Dashboard</li>
-      <li>🎯 Capitães</li>
-      <li>📊 Estatísticas</li>
-      <li>💎 Premium</li>
-      <li>🏆 Ranking</li>
-    </ul>
-  </div>
+<div class="sidebar">
+  <h2>⚽ Cartola FC Pro</h2>
+  <ul>
+    <li onclick="mostrar('dashboard')">🏠 Dashboard</li>
+    <li onclick="mostrar('capitaes')">🎯 Capitães</li>
+    <li onclick="mostrar('estatisticas')">📊 Estatísticas</li>
+    <li onclick="mostrar('premium')">💎 Premium</li>
+    <li onclick="mostrar('ranking')">🏆 Ranking</li>
+  </ul>
+</div>
 
-  <div class="main">
+<div class="main">
+
+  <section id="dashboard" class="pagina ativa">
     <h1>Dashboard</h1>
 
-    <div class="status">
-      <p class="status-rodada">Carregando rodada...</p>
-      <p class="status-mercado">Carregando mercado...</p>
-    </div>
+    <div class="card">🔥 Melhor Capitão: Pedro (Flamengo)</div>
+    <div class="card">⚡ Melhor Jogador: Hulk (Atlético-MG)</div>
+    <div class="card">🧠 Melhor Técnico: Abel Ferreira</div>
+    <div class="card">💰 Maior Valorização: Endrick (+3.20)</div>
+  </section>
 
-    <div class="card">
-      <h3>🔥 Melhor Jogador</h3>
-      <p class="melhor-jogador">Carregando...</p>
-    </div>
+  <section id="capitaes" class="pagina">
+    <h1>Capitães da Rodada</h1>
+    <div class="card">1️⃣ Pedro</div>
+    <div class="card">2️⃣ Hulk</div>
+    <div class="card">3️⃣ Cano</div>
+  </section>
 
-    <div class="card">
-      <h3>💰 Maior Valorização</h3>
-      <p class="maior-valorizacao">Carregando...</p>
-    </div>
+  <section id="estatisticas" class="pagina">
+    <h1>Estatísticas</h1>
+    <div class="card">📈 Média da rodada: 67.3 pontos</div>
+    <div class="card">⚽ Time mais escalado: Flamengo</div>
+    <div class="card">🛡 Melhor defesa: Palmeiras</div>
+  </section>
 
-  </div>
+  <section id="premium" class="pagina">
+    <h1>Área Premium</h1>
+    <div class="card">🔒 Scout Avançado</div>
+    <div class="card">📊 Probabilidade de Gol</div>
+    <div class="card">💎 Sugestão Exclusiva</div>
+  </section>
 
-  <script src="script.js"></script>
+  <section id="ranking" class="pagina">
+    <h1>Ranking Geral</h1>
+    <div class="card">🥇 Pedro Dantas - 845 pts</div>
+    <div class="card">🥈 Time Monstro - 820 pts</div>
+    <div class="card">🥉 Cartoleiro BR - 799 pts</div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
