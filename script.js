@@ -1,23 +1,33 @@
-async function carregarAtletas() {
+async function carregarStatusCartola() {
     try {
         const resposta = await fetch("/api/cartola");
         const dados = await resposta.json();
 
+        // Rodada atual
+        document.getElementById("rodada").innerText =
+            "Rodada " + dados.rodada_atual;
+
+        // Mercado
+        document.getElementById("mercado").innerText =
+            "Mercado: " + (dados.status?.nome || "Aberto");
+
         const atletas = Object.values(dados.atletas);
 
-        const melhor = atletas.sort((a, b) => b.media_num - a.media_num)[0];
+        // Melhor jogador (maior média)
+        const melhor = [...atletas].sort((a, b) => b.media_num - a.media_num)[0];
 
         document.getElementById("melhorJogador").innerText =
             melhor.apelido + " (" + melhor.media_num.toFixed(2) + ")";
 
-        const valorizacao = atletas.sort((a, b) => b.variacao_num - a.variacao_num)[0];
+        // Maior valorização
+        const valorizacao = [...atletas].sort((a, b) => b.variacao_num - a.variacao_num)[0];
 
         document.getElementById("valorizacao").innerText =
             valorizacao.apelido + " (+" + valorizacao.variacao_num.toFixed(2) + ")";
 
     } catch (erro) {
-        console.error("Erro:", erro);
+        console.error("Erro ao carregar dados:", erro);
     }
 }
 
-carregarAtletas();
+carregarStatusCartola();
