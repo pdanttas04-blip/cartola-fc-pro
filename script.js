@@ -23,13 +23,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const atletas = Object.values(dados.atletas);
 
-      const melhorJogador = atletas.sort((a, b) => b.media_num - a.media_num)[0];
+      const melhor = atletas.sort((a, b) => b.media_num - a.media_num)[0];
       document.querySelector(".melhor-jogador").innerText =
-        melhorJogador.apelido + " (" + melhorJogador.media_num.toFixed(2) + ")";
+        melhor.apelido + " (" + melhor.media_num.toFixed(2) + ")";
 
-      const maiorValorizacao = atletas.sort((a, b) => b.variacao_num - a.variacao_num)[0];
+      const valorizacao = atletas.sort((a, b) => b.variacao_num - a.variacao_num)[0];
       document.querySelector(".maior-valorizacao").innerText =
-        maiorValorizacao.apelido + " (+" + maiorValorizacao.variacao_num.toFixed(2) + ")";
+        valorizacao.apelido + " (+" + valorizacao.variacao_num.toFixed(2) + ")";
 
     } catch (erro) {
       console.log("Erro ao carregar atletas:", erro);
